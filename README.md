@@ -15,8 +15,8 @@ Objetivo principal:
 
 Todo List:
 
-	[x] Definição Grupo
-	[x] Encontrar DataSet
+	[x] ~~Definição Grupo~~
+	[x] ~~Encontrar DataSet~~
 	[ ] Desenvolver Software para filtrar DataSet
 	[ ] Analisar dados filtrados
 	[ ] Produzir um pequeno artigo sobre a metodologia e resultados encontrados
