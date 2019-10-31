@@ -1,128 +1,54 @@
 #include <stdio.h>
 #include <string.h>
-#include "read_file.h"
-#include "write_file.h"
 
-
-void separar_palavras(char *stream_ent, char *stream_1, char *stream_2);
-
+#include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char* argv[]) {
 
-    read_file_t txt_file = rf_open(argv[1]);
-    write_file_t csv_file = wf_open(argv[2]);
-    char stream[300];
-    char new_stream[300];
-    char stream_1[300];
-    char stream_2[300];
-    int number_sentence = 1;
-    bool insert_sentence = true;
-    int number_line = 1;
+    FILE* csv_file = fopen(argv[1], "r");
 
-    //Inserindo cabeçalho
-    wf_next_line(csv_file, "Sentence #,Word,Tag");
+    //id,surname,firstname,middlename,gender,gender_male,gender_female,state ,settlement,rural_settlement,urban_settlement,report_date,report_year,age,age_str ,date_of_birth,child_group,adult_group,disease,cholera,diarrhoea,measles,viral_haemmorrhaphic_fever,meningitis,ebola,marburg_virus,yellow_fever,rubella_mars,malaria,serotype     ,NmA,NmC,NmW,health_status,alive,dead,report_outcome,unconfirmed,confirmed,null_serotype
+    //1 ,Solade ,Grace    ,Solape    ,Female,0          ,1            ,Rivers,Rural     ,1               ,0               ,2018-05-15 ,2018       ,32 ,32 years,1986-01-17   ,0          ,1          ,Cholera,1      ,0        ,0      ,0                         ,0         ,0    ,0            ,0           ,0           ,0      ,null serotype,0  ,0  ,0  ,alive        ,1    ,0   ,confirmed     ,0          ,1        ,1
 
-    while(rf_next_line(txt_file, stream)) {
+    // ignorar;
+    char stream [500];
+    // Infos
 
-        printf("Linha atual: %d\n", number_line);
-        number_line++;
+    int id;
+    int gender_male;
+    int gender_female;
+    int rural_settlement;
+    int urban_settlement;
+    int age;
+    int child_group;
+    int adult_group;
+    int cholera;
+    int diarrhoea;
+    int measles;
+    int viral_haemmorrhaphic_fever;
+    int meningitis;
+    int ebola;
+    int marburg_virus;
+    int yellow_fever;
+    int rubella_mars;
+    int malaria;
+    int NmA;
+    int NmC;
+    int NmW;
+    int alive;
+    int dead;
+    int unconfirmed;
+    int confirmed;
 
-        if(strcmp(stream, "") != 0) {
+    int result;
 
-            separar_palavras(stream, stream_1, stream_2);
+    while((result = fscanf(csv_file, "%d,%s,%s,%s,%s,%d,%d,%s,%s,%d,%d,%s,%s,%d,%s,%s,%d,%d,%s,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%d,%d,%d,%s,%d,%d,%s,%d,%d,%d,%s\n", &id, stream, stream, stream, stream, &gender_male, &gender_female, stream , stream, &rural_settlement, &urban_settlement, stream, stream, &age, stream , stream, &child_group, &adult_group, stream, &cholera, &diarrhoea, &measles, &viral_haemmorrhaphic_fever, &meningitis, &ebola, &marburg_virus, &yellow_fever, &rubella_mars, &malaria, stream, &NmA, &NmC, &NmW, stream, &alive, &dead, stream, &unconfirmed, &confirmed, stream)) != EOF) {
 
-            //Coloca no arquivo
-            if(insert_sentence) {
-
-                fprintf(csv_file->file, "Sentence:%d,%s,%s\n", number_sentence, stream_1, stream_2);
-                number_sentence++;
-                insert_sentence = false;
-
-                printf("Sentence: %d,%s,%s\n", number_sentence, stream_1, stream_2);
-            } else {
-
-                fprintf(csv_file->file, ",%s,%s\n", stream_1, stream_2);
-
-                printf(",%s,%s\n", stream_1, stream_2);
-            }
-        } else {
-
-           insert_sentence = true;
-           printf("\n");
-        }
+        printf("id: %d | male: %d.\n", id, gender_male);
     }
     
-    rf_close(&txt_file);
-    wf_close(&csv_file);
+    fclose(csv_file);
 
     return 0;
-}
-
-void separar_palavras(char *stream_ent, char *stream_1, char *stream_2) {
-
-    int i = 0;
-    int j = 0;
-    bool especial_1 = false;
-    bool especial_2 = false;
-    char teste;
-
-    strcpy(stream_1, "");
-    strcpy(stream_2, "");
-
-    while(1) {
-
-        if(stream_ent[i] == ' ') {
-
-            stream_1[j] = '\0';
-            i++;
-            break;
-        }
-
-        teste = stream_ent[i];
-
-        if(teste == '.' || teste == ',')
-            especial_1 = true;
-
-        stream_1[j] = stream_ent[i];
-
-        i++;
-        j++;     
-    }
-
-    j = 0;
-
-    while(1) {
-
-        if(stream_ent[i] == '\n' || stream_ent[i] == '\0') {
-
-            stream_2[j] = '\0';
-            break;
-        }
-
-        teste = stream_ent[i];
-
-        if(teste == '.' || teste == ',')
-            especial_2 = true;
-
-        stream_2[j] = stream_ent[i];
-
-        i++;
-        j++;     
-    }
-
-    if(especial_1) {
-
-        char auxiliar[300] = "\"";
-        strcat(stream_1, auxiliar);
-        strcat(auxiliar, stream_1);
-        strcpy(stream_1, auxiliar);
-    }
-
-    if(especial_2) {
-
-        char auxiliar[300] = "\"";
-        strcat(stream_2, auxiliar);
-        strcat(auxiliar, stream_2);
-        strcpy(stream_2, auxiliar);
-    }
 }

@@ -2,5 +2,5 @@ CC = gcc
 
 all: prog
 
-prog:
-	$(CC) *.c -o prog
+prog: main.c
+	$(CC) main.c -o prog
