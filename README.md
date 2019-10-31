@@ -4,7 +4,6 @@ Repositório destinado ao desenvolvimendo do trabalho referente à disciplina Pr
 
 Integrantes do grupo de trabalho:
 	
-	Kayara Pereira
 	Micael Popping
 	Pablo Sanches
 	Wagner Loch
