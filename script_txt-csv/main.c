@@ -3,6 +3,19 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+// "Classe" para criar a doença
+ typedef struct {
+    char diseaseName[50];
+    int live;
+    int death;
+  }Disease;
+//lista de doenças para uma avaliação total
+   typedef struct  {
+    int tam ;
+    Disease *diseaseList;
+    int totallive;
+    int totaldeath;
+  }DiseaseList;
 
 int main(int argc, char* argv[]) {
 
