@@ -1,0 +1,35 @@
+DOENCA						| INFECTADOS| MORTOS 	|
+cholera						| 28589 	| 14321 	|
+diarrhoea					| 28550 	| 14361 	|
+measles						| 28471 	| 14186 	|
+viral_haemmorrhaphic_fever	| 28401 	| 14218 	|
+meningitis					| 28362 	| 14178 	|
+ebola						| 28179 	| 14165 	|
+marburg_virus				| 28430 	| 14210 	|
+yellow_fever				| 28428 	| 14210 	|
+rubella_mars				| 28539 	| 14270 	|
+malaria						| 28535 	| 14170 	|
+=====================================================
+DOENCA						| RURAL 	| URBANO 	|
+cholera						| 14307 	| 14282 	|
+diarrhoea					| 14282 	| 14268 	|
+measles						| 14259 	| 14212 	|
+viral_haemmorrhaphic_fever	| 14180 	| 14221 	|
+meningitis					| 14197 	| 14165 	|
+ebola						| 14161 	| 14018 	|
+marburg_virus				| 14219 	| 14211 	|
+yellow_fever				| 14317 	| 14111 	|
+rubella_mars				| 14437 	| 14102 	|
+malaria						| 14204 	| 14331 	|
+=====================================================
+DOENCA						| HOMENS 	| MULHERES 	|
+cholera						| 13916 	| 14673 	|
+diarrhoea					| 13722 	| 14828 	|
+measles						| 13579 	| 14892 	|
+viral_haemmorrhaphic_fever	| 13635 	| 14766 	|
+meningitis					| 13671 	| 14691 	|
+ebola						| 13765 	| 14414 	|
+marburg_virus				| 13716 	| 14714 	|
+yellow_fever				| 13652 	| 14776 	|
+rubella_mars				| 13651 	| 14888 	|
+malaria						| 13905 	| 14630 	|

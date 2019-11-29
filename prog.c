@@ -48,6 +48,10 @@ struct pessoa {
 struct doenca {
     int infectados;
     int mortos;
+    int urbano;
+    int rural;
+    int feminino;
+    int masculino;
 } cholera,diarrhoea,measles,viral_haemmorrhaphic_fever,meningitis,ebola,marburg_virus,yellow_fever,rubella_mars,malaria;
 
 
@@ -72,26 +76,76 @@ int main () {
 
 
 void inicializarEstruturas () {
+	//cholera
     cholera.infectados = 0;
     cholera.mortos = 0;
+    cholera.urbano = 0;
+    cholera.rural = 0;
+    cholera.feminino = 0;
+    cholera.masculino = 0;
+    //diarrhoea
     diarrhoea.infectados = 0;
     diarrhoea.mortos = 0;
+    diarrhoea.urbano = 0;
+    diarrhoea.rural = 0;
+    diarrhoea.feminino = 0;
+    diarrhoea.masculino = 0;
+    //measles
     measles.infectados = 0;
     measles.mortos = 0;
+    measles.urbano = 0;
+    measles.rural = 0;
+    measles.feminino = 0;
+    measles.masculino = 0;
+    //viral_haemmorrhaphic_fever
     viral_haemmorrhaphic_fever.infectados = 0;
     viral_haemmorrhaphic_fever.mortos = 0;
+    viral_haemmorrhaphic_fever.urbano = 0;
+    viral_haemmorrhaphic_fever.rural = 0;
+    viral_haemmorrhaphic_fever.feminino = 0;
+    viral_haemmorrhaphic_fever.masculino = 0;
+    //meningitis
     meningitis.infectados = 0;
     meningitis.mortos = 0;
+    meningitis.urbano = 0;
+    meningitis.rural = 0;
+    meningitis.feminino = 0;
+    meningitis.masculino = 0;
+    //ebola
     ebola.infectados = 0;
     ebola.mortos = 0;
+    ebola.urbano = 0;
+    ebola.rural = 0;
+    ebola.feminino = 0;
+    ebola.masculino = 0;
+    //marburg_virus
     marburg_virus.infectados = 0;
     marburg_virus.mortos = 0;
+    marburg_virus.urbano = 0;
+    marburg_virus.rural = 0;
+    marburg_virus.feminino = 0;
+    marburg_virus.masculino = 0;
+    //yellow_fever
     yellow_fever.infectados = 0;
     yellow_fever.mortos = 0;
+    yellow_fever.urbano = 0;
+    yellow_fever.rural = 0;
+    yellow_fever.feminino = 0;
+    yellow_fever.masculino = 0;
+    //rubella_mars
     rubella_mars.infectados = 0;
     rubella_mars.mortos = 0;
+    rubella_mars.urbano = 0;
+    rubella_mars.rural = 0;
+    rubella_mars.feminino = 0;
+    rubella_mars.masculino = 0;
+    //malaria
     malaria.infectados = 0;
     malaria.mortos = 0;
+    malaria.urbano = 0;
+    malaria.rural = 0;
+    malaria.feminino = 0;
+    malaria.masculino = 0;
 }
 
 int lerDataSet () {
@@ -252,11 +306,35 @@ void buscarDoencas () {
 			if (pessoa[i].dead) {
 				cholera.mortos++;
 			}
+			if (pessoa[i].rural_settlement) {
+				cholera.rural++;
+			}
+			else {
+				cholera.urbano++;
+			}
+			if (pessoa[i].gender_male) {
+				cholera.masculino++;
+			}
+			else {
+				cholera.feminino++;
+			}
 		}
 		if (pessoa[i].diarrhoea) {
 			diarrhoea.infectados++;
 			if(pessoa[i].dead) {
 				diarrhoea.mortos++;
+			}
+			if (pessoa[i].rural_settlement) {
+				diarrhoea.rural++;
+			}
+			else {
+				diarrhoea.urbano++;
+			}
+			if (pessoa[i].gender_male) {
+				diarrhoea.masculino++;
+			}
+			else {
+				diarrhoea.feminino++;
 			}
 		}
 		if (pessoa[i].measles) {
@@ -264,11 +342,35 @@ void buscarDoencas () {
 			if(pessoa[i].dead) {
 				measles.mortos++;
 			}
+			if (pessoa[i].rural_settlement) {
+				measles.rural++;
+			}
+			else {
+				measles.urbano++;
+			}
+			if (pessoa[i].gender_male) {
+				measles.masculino++;
+			}
+			else {
+				measles.feminino++;
+			}
 		}
 		if (pessoa[i].viral_haemmorrhaphic_fever) {
 			viral_haemmorrhaphic_fever.infectados++;
 			if(pessoa[i].dead) {
 				viral_haemmorrhaphic_fever.mortos++;
+			}
+			if (pessoa[i].rural_settlement) {
+				viral_haemmorrhaphic_fever.rural++;
+			}
+			else {
+				viral_haemmorrhaphic_fever.urbano++;
+			}
+			if (pessoa[i].gender_male) {
+				viral_haemmorrhaphic_fever.masculino++;
+			}
+			else {
+				viral_haemmorrhaphic_fever.feminino++;
 			}
 		}
 		if (pessoa[i].meningitis) {
@@ -276,11 +378,35 @@ void buscarDoencas () {
 			if (pessoa[i].dead) {
 				meningitis.mortos++;
 			}
+			if (pessoa[i].rural_settlement) {
+				meningitis.rural++;
+			}
+			else {
+				meningitis.urbano++;
+			}
+			if (pessoa[i].gender_male) {
+				meningitis.masculino++;
+			}
+			else {
+				meningitis.feminino++;
+			}
 		}
 		if (pessoa[i].ebola) {
 			ebola.infectados++;
 			if (pessoa[i].dead) {
 				ebola.mortos++;
+			}
+			if (pessoa[i].rural_settlement) {
+				ebola.rural++;
+			}
+			else {
+				ebola.urbano++;
+			}
+			if (pessoa[i].gender_male) {
+				ebola.masculino++;
+			}
+			else {
+				ebola.feminino++;
 			}
 		}
 		if (pessoa[i].marburg_virus) {
@@ -288,11 +414,35 @@ void buscarDoencas () {
 			if (pessoa[i].dead) {
 				marburg_virus.mortos++;
 			}
+			if (pessoa[i].rural_settlement) {
+				marburg_virus.rural++;
+			}
+			else {
+				marburg_virus.urbano++;
+			}
+			if (pessoa[i].gender_male) {
+				marburg_virus.masculino++;
+			}
+			else {
+				marburg_virus.feminino++;
+			}
 		}
 		if (pessoa[i].yellow_fever) {
 			yellow_fever.infectados++;
 			if (pessoa[i].dead) {
 				yellow_fever.mortos++;
+			}
+			if (pessoa[i].rural_settlement) {
+				yellow_fever.rural++;
+			}
+			else {
+				yellow_fever.urbano++;
+			}
+			if (pessoa[i].gender_male) {
+				yellow_fever.masculino++;
+			}
+			else {
+				yellow_fever.feminino++;
 			}
 		}
 		if (pessoa[i].rubella_mars) {
@@ -300,11 +450,35 @@ void buscarDoencas () {
 			if (pessoa[i].dead) {
 				rubella_mars.mortos++;
 			}
+			if (pessoa[i].rural_settlement) {
+				rubella_mars.rural++;
+			}
+			else {
+				rubella_mars.urbano++;
+			}
+			if (pessoa[i].gender_male) {
+				rubella_mars.masculino++;
+			}
+			else {
+				rubella_mars.feminino++;
+			}
 		}
 		if (pessoa[i].malaria) {
 			malaria.infectados++;
 			if (pessoa[i].dead) {
 				malaria.mortos++;
+			}
+			if (pessoa[i].rural_settlement) {
+				malaria.rural++;
+			}
+			else {
+				malaria.urbano++;
+			}
+			if (pessoa[i].gender_male) {
+				malaria.masculino++;
+			}
+			else {
+				malaria.feminino++;
 			}
 		}
 	}
@@ -322,4 +496,28 @@ void imprimirResultados () {
 	printf("yellow_fever\t\t\t| %d \t| %d \t|\n", yellow_fever.infectados, yellow_fever.mortos);
 	printf("rubella_mars\t\t\t| %d \t| %d \t|\n", rubella_mars.infectados, rubella_mars.mortos);
 	printf("malaria\t\t\t\t| %d \t| %d \t|\n", malaria.infectados, malaria.mortos);
+	printf("========================================\n");
+	printf("DOENCA\t\t\t\t| RURAL \t| URBANO \t|\n");
+	printf("cholera\t\t\t\t| %d \t| %d \t|\n", cholera.rural, cholera.urbano);
+	printf("diarrhoea\t\t\t| %d \t| %d \t|\n", diarrhoea.rural, diarrhoea.urbano);
+	printf("measles\t\t\t\t| %d \t| %d \t|\n", measles.rural, measles.urbano);
+	printf("viral_haemmorrhaphic_fever\t| %d \t| %d \t|\n", viral_haemmorrhaphic_fever.rural, viral_haemmorrhaphic_fever.urbano);
+	printf("meningitis\t\t\t| %d \t| %d \t|\n", meningitis.rural, meningitis.urbano);
+	printf("ebola\t\t\t\t| %d \t| %d \t|\n", ebola.rural, ebola.urbano);
+	printf("marburg_virus\t\t\t| %d \t| %d \t|\n", marburg_virus.rural, marburg_virus.urbano);
+	printf("yellow_fever\t\t\t| %d \t| %d \t|\n", yellow_fever.rural, yellow_fever.urbano);
+	printf("rubella_mars\t\t\t| %d \t| %d \t|\n", rubella_mars.rural, rubella_mars.urbano);
+	printf("malaria\t\t\t\t| %d \t| %d \t|\n", malaria.rural, malaria.urbano);
+	printf("========================================\n");
+	printf("DOENCA\t\t\t\t| HOMENS \t| MULHERES \t|\n");
+	printf("cholera\t\t\t\t| %d \t| %d \t|\n", cholera.masculino, cholera.feminino);
+	printf("diarrhoea\t\t\t| %d \t| %d \t|\n", diarrhoea.masculino, diarrhoea.feminino);
+	printf("measles\t\t\t\t| %d \t| %d \t|\n", measles.masculino, measles.feminino);
+	printf("viral_haemmorrhaphic_fever\t| %d \t| %d \t|\n", viral_haemmorrhaphic_fever.masculino, viral_haemmorrhaphic_fever.feminino);
+	printf("meningitis\t\t\t| %d \t| %d \t|\n", meningitis.masculino, meningitis.feminino);
+	printf("ebola\t\t\t\t| %d \t| %d \t|\n", ebola.masculino, ebola.feminino);
+	printf("marburg_virus\t\t\t| %d \t| %d \t|\n", marburg_virus.masculino, marburg_virus.feminino);
+	printf("yellow_fever\t\t\t| %d \t| %d \t|\n", yellow_fever.masculino, yellow_fever.feminino);
+	printf("rubella_mars\t\t\t| %d \t| %d \t|\n", rubella_mars.masculino, rubella_mars.feminino);
+	printf("malaria\t\t\t\t| %d \t| %d \t|\n", malaria.masculino, malaria.feminino);
 }
