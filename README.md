@@ -8,9 +8,13 @@ Integrantes do grupo de trabalho:
 	Pablo Sanches
 	Wagner Loch
 
-Objetivo principal:
+Objetivo inicial:
 
 	Avaliar datasets que tem como desfecho morte.
+	
+Objeto concluído:
+
+	Análise de dataset, obtenção de experiência com manipulação de dados e conhecimento de doenças.
 
 Todo List:
 
