@@ -16,6 +16,6 @@ Todo List:
 
 	[x] Definição Grupo
 	[x] Encontrar DataSet
-	[ ] Desenvolver Software para filtrar DataSet
-	[ ] Analisar dados filtrados
-	[ ] Produzir um pequeno artigo sobre a metodologia e resultados encontrados
+	[x] Desenvolver Software para filtrar DataSet
+	[x] Analisar dados filtrados
+	[x] Produzir um pequeno artigo ou apresentação sobre a metodologia e resultados encontrados
